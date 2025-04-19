@@ -11,9 +11,9 @@ body {
     padding: 0;
 }
 
-/* Overall Container with a refined gradient background */
+/* Overall Container using a slightly lighter dark-to-purple gradient */
 .withdraw-container {
-    background: linear-gradient(135deg, #283048, #859398);
+    background: linear-gradient(135deg, #1c1c1c, #6a0dad);
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
     color: #f0f0f0;
