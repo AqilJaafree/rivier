@@ -1,269 +1,292 @@
-/* Base container using a vibrant gradient and modern font */
+/* Import Google Fonts for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall Container with a refined gradient background */
 .withdraw-container {
-    display: flex;
-    height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #283048, #859398);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
     color: #f0f0f0;
-    font-family: 'Poppins', sans-serif;
 }
 
-/* Sidebar styling with sleek hover effects */
-.sidebar {
-    width: 260px;
-    background: #111;
-    padding: 30px 20px;
+/* Top Navigation Bar with gradient styling */
+.navbar {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s ease;
-}
-
-.sidebar:hover {
-    box-shadow: inset -5px 0 15px rgba(0, 0, 0, 0.3);
+    align-items: center;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
-    color: #f7931a;
-    margin-bottom: 30px;
+    color: #ffffff;
 }
 
-.logo .highlight {
-    color: #6a0dad;
-}
-
-.nav {
-    flex-grow: 1;
+.logo-part2 {
+    font-weight: 400;
+    opacity: 0.8;
 }
 
 .nav-list {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 24px;
     margin: 0;
+    padding: 0;
 }
 
 .nav-item {
-    padding: 12px 15px;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    padding: 6px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+    border-bottom: 2px solid #f0f0f0;
 }
 
 .nav-item.active {
-    background: #6a0dad;
-    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
 }
 
-/* Logout styling */
-.logout {
-    padding: 12px 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.logout:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Main content area */
+/* Main Content Area */
 .main-content {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 48px 16px;
 }
 
-/* Withdraw box with subtle hover scale and drop shadow */
-.withdraw-box {
-    background: #1c1c1e;
-    padding: 40px 30px;
-    border-radius: 15px;
-    width: 450px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-    transition: transform 0.3s ease;
+/* Withdraw Card with subtle gradient border for visual flair */
+.withdraw-card {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    padding: 32px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.withdraw-box:hover {
+.withdraw-card:hover {
     transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9);
 }
 
-/* Crypto section with clear visual hierarchy */
-.crypto-section {
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
+.card-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
+/* Cryptocurrency Information */
 .crypto-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 .crypto-icon {
-    background: #f7931a;
-    padding: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #0d0d0d;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 12px;
     border-radius: 50%;
-    font-weight: 700;
-    color: #fff;
-    min-width: 40px;
-    text-align: center;
 }
 
 .crypto-balance {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 14px;
 }
 
-/* Withdraw form groups elements neatly */
+/* Withdrawal Form Styling */
 .withdraw-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
-/* Customized radio button options with interactive feedback */
 .withdraw-options {
     display: flex;
-    justify-content: space-between;
-    gap: 15px;
+    gap: 16px;
 }
 
-.radio-label {
+.option-radio {
     flex: 1;
-    background: #2a2a2a;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
     text-align: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
     font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.radio-label input {
-    margin-right: 8px;
+.option-radio input {
+    margin-right: 6px;
     transform: scale(1.2);
 }
 
-.radio-label.selected,
-.radio-label:hover {
-    background: #6a0dad;
+.option-radio:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Styled input for withdrawal address */
+.option-radio.selected {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #0d0d0d;
+    font-weight: 700;
+}
+
+/* Input Field for Withdrawal Address */
 .withdraw-address {
     width: 100%;
-    padding: 14px 15px;
+    padding: 12px;
     border: none;
-    border-radius: 8px;
-    background: #2a2a2a;
-    color: #f0f0f0;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
     font-size: 16px;
-    outline: none;
-    transition: background 0.3s ease;
+    color: #f0f0f0;
+    transition: background 0.3s;
 }
 
 .withdraw-address:focus {
-    background: #3a3a3a;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Withdraw amount section with interactive buttons */
+/* Withdrawal Amount Row */
 .withdraw-amount {
     display: flex;
+    gap: 12px;
     align-items: center;
-    gap: 10px;
 }
 
 .withdraw-amount input {
     flex: 1;
-    padding: 14px 15px;
-    border-radius: 8px;
+    padding: 12px;
     border: none;
-    text-align: center;
-    background: #2a2a2a;
-    color: #f0f0f0;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
     font-size: 16px;
+    color: #f0f0f0;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.withdraw-amount input:focus {
     outline: none;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .amount-btn {
-    padding: 12px 20px;
-    background: #6a0dad;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border: none;
-    border-radius: 8px;
-    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #0d0d0d;
     cursor: pointer;
-    font-weight: 500;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .amount-btn:hover {
-    background: #5a0891;
     transform: scale(1.05);
 }
 
-/* Summary of withdrawal info */
+/* Withdrawal Summary */
 .withdraw-summary {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
-    font-weight: 500;
     padding: 12px;
-    background: #2a2a2a;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-/* Main action button with gradient and scale effect */
+/* Withdraw Button */
 .withdraw-btn {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(45deg, #f7931a, #e68312);
+    padding: 14px;
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #e96443, #904e95);
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .withdraw-btn:hover {
-    transform: scale(1.03);
-    background: linear-gradient(45deg, #e68312, #f7931a);
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #d9543a, #804580);
 }
 
-/* Responsive adjustments for smaller screens */
+.withdraw-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Spinner for Processing State */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .withdraw-container {
+    .withdraw-card {
+        width: 90%;
+    }
+
+    .nav-container {
         flex-direction: column;
+        align-items: flex-start;
     }
 
-    .sidebar {
-        width: 100%;
-        padding: 15px 10px;
-    }
-
-    .main-content {
-        padding: 20px;
-    }
-
-    .withdraw-box {
-        width: 100%;
-        padding: 30px 20px;
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 12px;
     }
 }

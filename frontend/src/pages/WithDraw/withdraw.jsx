@@ -1,31 +1,14 @@
 import React, { useState } from 'react';
 import './withdraw.css';
 
-function Withdraw() {
-  const [withdrawMethod, setWithdrawMethod] = useState('direct');
-  const [withdrawAmount, setWithdrawAmount] = useState('0.02000000');
-
-  const handleMethodChange = (event) => {
-    setWithdrawMethod(event.target.value);
-  };
-
-  const handleAmountAll = () => {
-    // For demonstration, assume full balance is "1.23456789"
-    setWithdrawAmount('1.23456789');
-  };
-
-  const handleAmountMin = () => {
-    // For demonstration, assume minimum withdrawal is "0.00500000"
-    setWithdrawAmount('0.00500000');
-  };
-
+function Navbar() {
   return (
-    <div className="withdraw-container">
-      <aside className="sidebar">
+    <header className="navbar">
+      <div className="nav-container">
         <div className="logo">
-          Revier
+          <span className="logo-part1">Revier</span>
         </div>
-        <nav className="nav">
+        <nav>
           <ul className="nav-list">
             <li className="nav-item">Dashboard</li>
             <li className="nav-item active">Withdraw</li>
@@ -35,21 +18,49 @@ function Withdraw() {
             <li className="nav-item">Profile</li>
           </ul>
         </nav>
-        <div className="logout">Log Out</div>
-      </aside>
+      </div>
+    </header>
+  );
+}
+
+function Withdraw() {
+  const [withdrawMethod, setWithdrawMethod] = useState('direct');
+  const [withdrawAmount, setWithdrawAmount] = useState('0.02000000');
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleMethodChange = (event) => {
+    setWithdrawMethod(event.target.value);
+  };
+
+  const handleAmountAll = () => {
+    setWithdrawAmount('1.23456789');
+  };
+
+  const handleAmountMin = () => {
+    setWithdrawAmount('0.00500000');
+  };
+
+  const handleWithdraw = () => {
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      alert('Withdrawal processed successfully!');
+    }, 2000);
+  };
+
+  return (
+    <div className="withdraw-container">
+      <Navbar />
       <main className="main-content">
-        <div className="withdraw-box">
-          <div className="crypto-section">
-            <div className="crypto-info">
-              <span className="crypto-icon">BTC</span>
-              <span className="crypto-balance">0.00000000</span>
-            </div>
+        <div className="withdraw-card">
+          <h2 className="card-title">Withdrawal Request</h2>
+          <div className="crypto-info">
+            <div className="crypto-icon">BTC</div>
+            <div className="crypto-balance">Balance: 0.00000000</div>
           </div>
           <div className="withdraw-form">
             <div className="withdraw-options">
-              <label
-                className={`radio-label ${withdrawMethod === 'faucetpay' ? 'selected' : ''}`}
-              >
+              <label className={`option-radio ${withdrawMethod === 'faucetpay' ? 'selected' : ''}`}>
                 <input
                   type="radio"
                   name="withdraw-method"
@@ -57,11 +68,9 @@ function Withdraw() {
                   checked={withdrawMethod === 'faucetpay'}
                   onChange={handleMethodChange}
                 />
-                <span>FAUCETPAY (LESS FEES)</span>
+                FaucetPay (Less Fees)
               </label>
-              <label
-                className={`radio-label ${withdrawMethod === 'direct' ? 'selected' : ''}`}
-              >
+              <label className={`option-radio ${withdrawMethod === 'direct' ? 'selected' : ''}`}>
                 <input
                   type="radio"
                   name="withdraw-method"
@@ -69,7 +78,7 @@ function Withdraw() {
                   checked={withdrawMethod === 'direct'}
                   onChange={handleMethodChange}
                 />
-                <span>DIRECT WITHDRAWAL</span>
+                Direct Withdrawal
               </label>
             </div>
             <input
@@ -84,9 +93,15 @@ function Withdraw() {
             </div>
             <div className="withdraw-summary">
               <span>Fee: 0.003 BTC</span>
-              <span>You Receive: 0.017 BTC</span>
+              <span>You receive: 0.017 BTC</span>
             </div>
-            <button className="withdraw-btn">WITHDRAW NOW</button>
+            <button
+              className="withdraw-btn"
+              onClick={handleWithdraw}
+              disabled={isProcessing}
+            >
+              {isProcessing ? <div className="spinner"></div> : 'Withdraw Now'}
+            </button>
           </div>
         </div>
       </main>
