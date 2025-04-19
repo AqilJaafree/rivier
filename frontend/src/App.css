@@ -1,8 +1,18 @@
-/* Global Reset & Smooth Scrolling */
-*, *::before, *::after {
+/* Global Reset & Full Bleed Setup */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body,
+.homepage {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -17,35 +27,31 @@ body {
   overflow-x: hidden;
 }
 
-/* Variables for Theming */
+/* Theming Variables */
 :root {
   --primary-color: #1abc9c;
   --secondary-color: #3498db;
-  --accent-color: #e74c3c;
   --header-bg: rgba(29, 31, 33, 0.95);
   --section-bg: #27282c;
   --section-alt-bg: #333;
 }
 
-/* Header & Navigation */
+/* Header – Full Width */
 .header {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   background: var(--header-bg);
   backdrop-filter: blur(5px);
-  z-index: 1000;
-  padding: 1rem 0;
   border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+  z-index: 1000;
 }
 
-.header-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .logo {
@@ -61,8 +67,8 @@ body {
 }
 
 .nav-link {
-  text-decoration: none;
   color: #f0f0f0;
+  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -72,23 +78,23 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero Section with Parallax Background */
+/* Hero Section – Full Bleed & Full Viewport Height */
 .hero {
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1d1f21 100%);
+  background: linear-gradient(135deg, #0a0a0a, #1d1f21);
   position: relative;
-  padding: 0 1rem;
   text-align: center;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: url('https://picsum.photos/1920/1080?blur=2') center/cover no-repeat;
@@ -97,8 +103,8 @@ body {
 }
 
 .hero-content {
-  max-width: 800px;
-  z-index: 1;
+  width: 100%;
+  padding: 1rem;
   animation: fadeInUp 1s ease-out forwards;
   opacity: 0;
 }
@@ -114,6 +120,7 @@ body {
   color: #cccccc;
 }
 
+/* Button Styles */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -143,27 +150,23 @@ body {
   box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5);
 }
 
-/* Main Content Sections - Full Row Layout */
-.main-content {
-  margin-top: 100px; /* Offset for fixed header */
+/* Main Content Sections – Full Bleed */
+.main-content,
+main {
+  margin-top: 100px;
+  /* space for fixed header */
 }
 
 .content-section {
   width: 100%;
   background: var(--section-bg);
-  padding: 4rem 0;
+  padding: 4rem 1rem;
+  text-align: center;
   border-bottom: 1px solid rgba(240, 240, 240, 0.1);
 }
 
-.content-section:nth-child(even) {
+.content-section:nth-of-type(even) {
   background: var(--section-alt-bg);
-}
-
-.section-wrapper {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .section-title {
@@ -179,16 +182,17 @@ body {
   line-height: 1.8;
 }
 
-/* Footer */
+/* Footer – Full Width */
 .footer {
+  width: 100%;
   background: var(--header-bg);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: center;
   color: #999;
   font-size: 0.9rem;
 }
 
-/* Reveal Animation for Scroll Benefits */
+/* Reveal Animation */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -205,21 +209,20 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Responsive Design Adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
   }
+
   .nav-list {
     gap: 1rem;
-  }
-  .header-container {
-    padding: 0 1rem;
   }
 }
