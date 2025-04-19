@@ -8,6 +8,15 @@ function App() {
 
   return (
     <>
+      {/* Navigation bar with 5 buttons */}
+      <nav className="navigation">
+        <button className="nav-button">Home</button>
+        <button className="nav-button">About</button>
+        <button className="nav-button">Services</button>
+        <button className="nav-button">Portfolio</button>
+        <button className="nav-button">Contact</button>
+      </nav>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -33,14 +42,3 @@ function App() {
 }
 
 export default App
-// import React from "react";
-// import Routes from "./Routes";
-// import { BrowserRouter as Router } from "react-router-dom";
-// function App() {
-//   return (
-//     <Router>
-//       <Routes />
-//     </Router>
-//   );
-// }
-// export default App;
