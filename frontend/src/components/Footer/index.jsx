@@ -9,7 +9,7 @@ export default function Footer({ ...props }) {
                 <div className="flex items-center justify-between gap-5 md: flex-col">
                     <div className="flex w-[22%] flex-col gap-[62px] md:w-full sm:gap-[31px]">
                         <div className="flex">
-                            <Img src="images/img_footer_logo.png" alt="Footerlogo" className="h-[32px] w-[122px] object-contain" />
+                            <Img src="images/img_header_logo.png" alt="Footerlogo" className="h-[32px] w-[122px] object-contain" />
                         </div>
                         <div className="flex flex-col items-start justify-center gap-8">
                             <div className="flex gap-3">
