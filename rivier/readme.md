@@ -4,8 +4,6 @@
 
 Rivier is a liquidity provision protocol built on SUI blockchain that enables users to provide liquidity to WBTC/SUI pools and earn yield. The protocol integrates with Gecko Terminal API to fetch real-time pool data and recommends the best pools based on fees and liquidity.
 
-![Rivier Protocol](https://via.placeholder.com/800x400?text=Rivier+Protocol)
-
 ## Features
 
 - **Liquidity Provision**: Provide liquidity to WBTC/SUI pools with different fee tiers
@@ -172,9 +170,8 @@ The protocol consists of three main components:
 This project was created for the SUI Hackathon. The current implementation focuses on:
 
 1. Core liquidity provision functionality
-2. Generic design to support any coin type
-3. Integration with Gecko Terminal for data
-4. Simple user interface through a chatbot
+2. Integration with Gecko Terminal for data
+3. Simple user interface through a chatbot
 
 While the contract is functional, some advanced features like impermanent loss calculations and precise APY estimates would be implemented in a production version.
 
