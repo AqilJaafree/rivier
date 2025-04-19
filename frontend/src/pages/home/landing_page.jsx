@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './landing_page.css';
+import Withdraw from '../withdraw/withdraw.jsx';
 
 function Header() {
     return (
@@ -14,7 +15,7 @@ function Header() {
                             <Link to="/smartcontracts" className="nav-link">Smart Contracts</Link>
                         </li>
                         <li>
-                            <Link to="/services" className="nav-link">Services</Link>
+                            <Link to="/withdraw" className="nav-link">Services</Link>
                         </li>
                         <li>
                             <Link to="/solutions" className="nav-link">Solutions</Link>
@@ -94,6 +95,16 @@ function LandingPage() {
                 </footer>
             </div>
         </>
+    );
+}
+
+function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/withdraw" element={<Withdraw />} />
+            {/* Other routes … */}
+        </Routes>
     );
 }
 

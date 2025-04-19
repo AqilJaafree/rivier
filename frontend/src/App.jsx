@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LandingPage from './pages/home/landing_page';
+import Withdraw from './pages/withdraw/withdraw';
 import './App.css';
 
 // Component for the homepage content
@@ -48,8 +49,8 @@ function HomePage() {
                 </Link>
               </li>
               <li>
-                <a href="#services" className="nav-link">
-                  Services
+                <a href="/withdraw" className="nav-link">
+                  Withdraw
                 </a>
               </li>
               <li>
@@ -126,6 +127,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<LandingPage />} />
+        <Route path="/withdraw" element={<Withdraw />} />
       </Routes>
     </Router>
   );
