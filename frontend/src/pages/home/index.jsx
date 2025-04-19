@@ -1,9 +1,6 @@
 import { Helmet } from "react-helmet";
+import { Img, Button, Text, Heading } from "../../components";
 import Header from "../../components/Header";
-import Img from "../../components/Img";
-import Button from "../../components/Button";
-import Text from "../../components/Text";
-import Heading from "../../components/Heading";
 import React from "react";
 
 export default function HomePage() {
