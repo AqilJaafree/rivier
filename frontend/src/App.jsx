@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LandingPage from './pages/home/landing_page';
 import Withdraw from './pages/withdraw/withdraw';
+import Deposits from './pages/deposits/deposits';
 import './App.css';
 
 // Component for the homepage content
@@ -128,6 +129,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<LandingPage />} />
         <Route path="/withdraw" element={<Withdraw />} />
+        <Route path="/deposits" element={<Deposits />} />
       </Routes>
     </Router>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './withdraw.css';
 
 function Navbar() {
@@ -10,12 +11,24 @@ function Navbar() {
         </div>
         <nav>
           <ul className="nav-list">
-            <li className="nav-item">Dashboard</li>
-            <li className="nav-item active">Withdraw</li>
-            <li className="nav-item">Deposits</li>
-            <li className="nav-item">Buy Miner</li>
-            <li className="nav-item">Settings</li>
-            <li className="nav-item">Profile</li>
+            <li className="nav-item">
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li className="nav-item active">
+              <Link to="/withdraw">Withdraw</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/deposits">Deposits</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/buyminer">Buy Miner</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/settings">Settings</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/profile">Profile</Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -60,7 +73,11 @@ function Withdraw() {
           </div>
           <div className="withdraw-form">
             <div className="withdraw-options">
-              <label className={`option-radio ${withdrawMethod === 'faucetpay' ? 'selected' : ''}`}>
+              <label
+                className={`option-radio ${
+                  withdrawMethod === 'faucetpay' ? 'selected' : ''
+                }`}
+              >
                 <input
                   type="radio"
                   name="withdraw-method"
@@ -70,7 +87,11 @@ function Withdraw() {
                 />
                 FaucetPay (Less Fees)
               </label>
-              <label className={`option-radio ${withdrawMethod === 'direct' ? 'selected' : ''}`}>
+              <label
+                className={`option-radio ${
+                  withdrawMethod === 'direct' ? 'selected' : ''
+                }`}
+              >
                 <input
                   type="radio"
                   name="withdraw-method"
@@ -88,8 +109,12 @@ function Withdraw() {
             />
             <div className="withdraw-amount">
               <input type="text" value={withdrawAmount} readOnly />
-              <button className="amount-btn" onClick={handleAmountAll}>ALL</button>
-              <button className="amount-btn" onClick={handleAmountMin}>MIN</button>
+              <button className="amount-btn" onClick={handleAmountAll}>
+                ALL
+              </button>
+              <button className="amount-btn" onClick={handleAmountMin}>
+                MIN
+              </button>
             </div>
             <div className="withdraw-summary">
               <span>Fee: 0.003 BTC</span>
