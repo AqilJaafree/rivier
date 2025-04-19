@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+// App.jsx
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import LandingPage from './pages/home/landing_page';
 import './App.css';
 
-function App() {
-  // Reveal elements on scroll with a simple scroll effect.
+// Component for the homepage content
+function HomePage() {
   useEffect(() => {
+    // Reveal elements on scroll with a simple scroll effect.
     const reveals = document.querySelectorAll('.reveal');
 
     const onScroll = () => {
@@ -32,11 +36,32 @@ function App() {
           <div className="logo">Rivier</div>
           <nav>
             <ul className="nav-list">
-              <li><a href="#home" className="nav-link">Home</a></li>
-              <li><a href="#about" className="nav-link">About</a></li>
-              <li><a href="#services" className="nav-link">Services</a></li>
-              <li><a href="#portfolio" className="nav-link">Portfolio</a></li>
-              <li><a href="#contact" className="nav-link">Contact</a></li>
+              <li>
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+              </li>
+              <li>
+                {/* Change the About navigation to use React Router */}
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
+              </li>
+              <li>
+                <a href="#services" className="nav-link">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" className="nav-link">
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="nav-link">
+                  Contact
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -49,11 +74,14 @@ function App() {
           <p className="hero-tagline">
             Innovating the Future with Creative Web3 Solutions
           </p>
-          <a href="#about" className="btn primary-btn">Discover More</a>
+          {/* Optionally you could also use Link here if you want to navigate rather than scroll */}
+          <Link to="/about" className="btn primary-btn">
+            Discover More
+          </Link>
         </div>
       </section>
 
-      {/* Main Content Sections */}
+      {/* Other sections remain as in your original layout */}
       <main>
         <section id="about" className="content-section reveal">
           <h2 className="section-title">About Us</h2>
@@ -61,27 +89,27 @@ function App() {
             We combine minimalist design with breakthrough technology to create secure, user‑centric Web3 solutions that empower businesses and individuals.
           </p>
         </section>
-
+        {/* Services, Portfolio, and Contact sections */}
         <section id="services" className="content-section reveal">
           <h2 className="section-title">Our Services</h2>
           <p className="section-description">
             Whether it’s blockchain integration or decentralized applications, each solution is crafted with precision and creative flair.
           </p>
         </section>
-
         <section id="portfolio" className="content-section reveal">
           <h2 className="section-title">Portfolio</h2>
           <p className="section-description">
             Discover our cutting‑edge projects that showcase our commitment to design excellence and innovative technology.
           </p>
         </section>
-
         <section id="contact" className="content-section reveal">
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-description">
             Ready to revolutionize your digital presence? Join us in building visionary Web3 innovations.
           </p>
-          <a href="mailto:contact@rivier.com" className="btn secondary-btn">Contact Us</a>
+          <a href="mailto:contact@rivier.com" className="btn secondary-btn">
+            Contact Us
+          </a>
         </section>
       </main>
 
@@ -90,6 +118,16 @@ function App() {
         <p>&copy; 2025 Rivier. All Rights Reserved.</p>
       </footer>
     </div>
+  );
+}
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<LandingPage />} />
+      </Routes>
+    </Router>
   );
 }
 
