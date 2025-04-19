@@ -67,7 +67,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('/images/bg-pattern.jpg') center/cover no-repeat;
+    background: url('/bg-pattern.png') center/cover no-repeat;
     background-color: #121212;
     padding: 0 20px;
 }
