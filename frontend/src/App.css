@@ -1,42 +1,225 @@
-#root {
+/* Global Reset & Smooth Scrolling */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #1d1f21;
+  color: #f0f0f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Variables for Theming */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --header-bg: rgba(29, 31, 33, 0.95);
+  --section-bg: #27282c;
+  --section-alt-bg: #333;
+}
+
+/* Header & Navigation */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var(--header-bg);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+}
+
+.header-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
-@keyframes logo-spin {
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Hero Section with Parallax Background */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1d1f21 100%);
+  position: relative;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://picsum.photos/1920/1080?blur=2') center/cover no-repeat;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #cccccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: #000;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(26, 188, 156, 0.5);
+}
+
+.secondary-btn {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5);
+}
+
+/* Main Content Sections - Full Row Layout */
+.main-content {
+  margin-top: 100px; /* Offset for fixed header */
+}
+
+.content-section {
+  width: 100%;
+  background: var(--section-bg);
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+}
+
+.content-section:nth-child(even) {
+  background: var(--section-alt-bg);
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.section-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  background: var(--header-bg);
+  padding: 2rem 0;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Reveal Animation for Scroll Benefits */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .nav-list {
+    gap: 1rem;
+  }
+  .header-container {
+    padding: 0 1rem;
+  }
 }
