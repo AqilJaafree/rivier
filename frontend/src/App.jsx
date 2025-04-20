@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LandingPage from './pages/home/landing_page';
-import Withdraw from './pages/withdraw/withdraw';
-import Deposits from './pages/deposits/deposits';
+import Withdraw from './pages/WithDraw/withdraw';
+import Deposits from './pages/deposits/Deposits';
 import './App.css';
 
 // Component for the homepage content

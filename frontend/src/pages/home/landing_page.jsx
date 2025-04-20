@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import './landing_page.css';
-import Withdraw from '../withdraw/withdraw.jsx';
+import Withdraw from '../WithDraw/withdraw';
 
 function Header() {
     return (

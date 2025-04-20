@@ -98,134 +98,484 @@ body {
     color: #ffffff;
 }
 
-/* Cryptocurrency Information */
-.crypto-info {
+/* Quick Actions Section */
+.quick-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #1e8ebe, #430394);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 142, 190, 0.3);
+}
+
+.quick-action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Wallet Button Container */
+.wallet-button-container {
+    display: inline-block;
+}
+
+/* Override the wallet-kit button to match our theme */
+.wallet-button-container button {
+    background: linear-gradient(135deg, #764ba2, #667eea) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    padding: 10px 16px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+.wallet-button-container button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.3) !important;
+}
+
+/* Override the wallet adapter modal styles */
+:root {
+    --wkit-accent-hs: 267, 50%;
+    --wkit-on-accent-hs: 0, 0%;
+    --wkit-bg-hs: 0, 0%;
+    --wkit-on-bg-hs: 0, 0%;
+    
+    --wkit-accent-l: 50%;
+    --wkit-on-accent-l: 100%;
+    --wkit-bg-l: 6%;
+    --wkit-on-bg-l: 100%;
+
+    --wkit-border-radius: 8px;
+    --wkit-font-family: 'Inter', sans-serif;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.loading-spinner-small {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* NEW CHAT UI STYLES */
+
+/* Chat Card */
+.chat-card {
+    width: 700px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Messages Container */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Message Bubbles */
+.chat-message {
+    display: flex;
+    margin-bottom: 12px;
+    max-width: 90%;
+}
+
+.user-message {
+    align-self: flex-end;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.assistant-message {
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.message-content {
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border-top-right-radius: 4px;
+    max-width: 100%;
+}
+
+.assistant-message .message-content {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+    border-top-left-radius: 4px;
+    max-width: 100%;
+    white-space: pre-line;
+}
+
+.message-content strong {
+    color: #8be9fd;
+    font-weight: 600;
+}
+
+/* Provide Liquidity Button in Message */
+.provide-lp-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #1e8ebe, #430394);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.provide-lp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(30, 142, 190, 0.3);
+}
+
+/* Typing Indicator */
+.typing-indicator {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 5px;
 }
 
-.crypto-icon {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #0d0d0d;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 12px;
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
+    animation: typing 1s infinite ease-in-out;
 }
 
-.crypto-balance {
-    font-size: 14px;
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
 }
 
-/* QR Code Section */
-.qr-code {
-    text-align: center;
-    margin-bottom: 24px;
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-.qr-code img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
-/* Deposit Address Section */
-.deposit-address {
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+/* Input Area */
+.chat-input-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 16px;
+    gap: 12px;
+    position: relative;
 }
 
-.address-label {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.deposit-address input {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px;
+.chat-input {
+    flex: 1;
+    padding: 14px 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
-    font-size: 16px;
-    color: #f0f0f0;
-    text-align: center;
-    transition: background 0.3s;
-    margin-bottom: 8px;
-}
-
-.deposit-address input:focus {
+    color: #fff;
+    font-size: 15px;
+    resize: none;
+    height: 56px;
+    max-height: 160px;
     outline: none;
-    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
 }
 
-.copy-button {
-    padding: 12px 16px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+.chat-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
     border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #0d0d0d;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.copy-button:hover {
+.send-button:hover {
     transform: scale(1.05);
 }
 
-.copy-feedback {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #67a7f1;
+.send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: scale(1);
 }
 
-/* Instructions Paragraph */
-.instructions {
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 24px;
-    color: #aaa;
-}
-
-/* Deposit Button */
-.deposit-btn {
+/* Liquidity Provision Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #e96443, #904e95);
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.deposit-btn:hover {
+.lp-modal {
+    background: #1f1f1f;
+    width: 450px;
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #1e8ebe, #430394);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.close-modal:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.pool-details {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.pool-details p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.cancel-btn, .confirm-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancel-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ccc;
+}
+
+.cancel-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #1e8ebe, #430394);
+    border: none;
+    color: white;
+}
+
+.confirm-btn:hover {
     transform: translateY(-2px);
-    background: linear-gradient(90deg, #d9543a, #804580);
+    box-shadow: 0 4px 12px rgba(30, 142, 190, 0.3);
+}
+
+.confirm-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .deposit-card {
+    .deposit-card, .chat-card {
         width: 90%;
+    }
+    
+    .chat-card {
+        height: 500px;
     }
 
     .nav-container {
         flex-direction: column;
         align-items: flex-start;
     }
-
+    
     .nav-list {
         flex-wrap: wrap;
         gap: 12px;
+    }
+    
+    .lp-modal {
+        width: 95%;
     }
 }
