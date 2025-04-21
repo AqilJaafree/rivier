@@ -578,4 +578,35 @@ body {
     .lp-modal {
         width: 95%;
     }
+    /* Add to deposits.css */
+.main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px;
+    width: 100%;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .deposit-card.chat-card {
+    flex: 1;
+  }
+  
+  @media (max-width: 992px) {
+    .main-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .deposit-card.chat-card,
+    .news-bar {
+      width: 100%;
+    }
+  }
 }
