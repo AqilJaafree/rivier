@@ -1,0 +1,126 @@
+/* components/PositionsList.css */
+.positions-list {
+    margin-bottom: 24px;
+  }
+  
+  .positions-list-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #f0f0f0;
+  }
+  
+  .position-item {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .position-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .position-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .position-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  
+  .position-name h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #f0f0f0;
+  }
+  
+  .position-id {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .position-action {
+    flex-shrink: 0;
+  }
+  
+  .withdraw-lp-btn {
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #e96443, #904e95);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .withdraw-lp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(233, 100, 67, 0.3);
+  }
+  
+  .position-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .position-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  
+  .detail-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #f0f0f0;
+  }
+  
+  .positions-list-loading, .positions-list-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: #ccc;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  
+  .positions-list-loading .loading-spinner {
+    margin-bottom: 12px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .position-header {
+      flex-direction: column;
+    }
+    
+    .position-action {
+      margin-top: 12px;
+    }
+    
+    .position-details {
+      grid-template-columns: 1fr;
+    }
+  }

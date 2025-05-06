@@ -1,4 +1,4 @@
-// NewsBar.jsx
+// components/NewsBar.jsx
 import React, { useState, useEffect } from 'react';
 import './NewsBar.css';
 
@@ -11,6 +11,7 @@ const NewsBar = () => {
     const fetchNews = async () => {
       try {
         setLoading(true);
+        // This is a placeholder API endpoint, replace with your actual news API
         const response = await fetch(
           'https://api.defidive.com/news/article/all/v2?page=1&tags_filter_list=btc&timeframe=1w',
           {
@@ -48,7 +49,7 @@ const NewsBar = () => {
         <h2 className="news-title">Crypto News</h2>
         <div className="news-loading">
           <span className="loading-spinner"></span>
-          <p>Loading latest BTC news...</p>
+          <p>Loading latest crypto news...</p>
         </div>
       </div>
     );

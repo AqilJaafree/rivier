@@ -1,4 +1,4 @@
-/* NewsBar.css */
+/* components/NewsBar.css */
 .news-bar {
     width: 300px;
     background: rgba(0, 0, 0, 0.75);
@@ -24,6 +24,7 @@
     background: rgba(0, 0, 0, 0.85);
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 5;
   }
   
   .news-list {
@@ -103,19 +104,8 @@
     text-align: center;
   }
   
-  .loading-spinner {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
+  .news-loading .loading-spinner {
     margin-bottom: 15px;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
   }
   
   .no-news {
