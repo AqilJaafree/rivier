@@ -1,133 +1,140 @@
 /* pages/Bridge.css */
 .bridge-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 150px);
-  }
-  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  /* Optionally, you can add a light background if needed: background-color: #f8f8f8; */
+}
+
+.bridge-card {
+  width: 650px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bridge-description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bridge-info {
+  margin: 20px 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.info-item:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1e88e5;
+  border-radius: 50%;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.info-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.info-content p {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.wormhole-container {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Override Wormhole Connect styles to match our theme */
+.wormhole-container :global(.MuiPaper-root) {
+  background-color: transparent !important;
+}
+
+.bridge-notice {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  border-left: 4px solid #1e88e5;
+}
+
+.bridge-notice p {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.bridge-notice strong {
+  color: #333333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .bridge-card {
-    width: 650px;
-    padding: 40px;
-    transition: transform 0.3s ease;
+    width: 100%;
+    padding: 30px 20px;
   }
-  
-  .bridge-description {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #cccccc;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .bridge-info {
-    margin: 20px 0 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+
   .info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    padding: 12px;
   }
-  
-  .info-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-2px);
-  }
-  
+
   .info-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #1e8ebe, #430394);
-    border-radius: 50%;
-    color: white;
-    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
   }
-  
+
   .info-content h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 16px;
   }
-  
+
   .info-content p {
-    font-size: 14px;
-    color: #cccccc;
-    margin: 0;
-    line-height: 1.5;
+    font-size: 13px;
   }
-  
+
   .wormhole-container {
-    margin: 30px 0;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 10px;
   }
-  
-  /* Override Wormhole Connect styles to match our theme */
-  .wormhole-container :global(.MuiPaper-root) {
-    background-color: transparent !important;
-  }
-  
-  .bridge-notice {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid #1e8ebe;
-  }
-  
-  .bridge-notice p {
-    font-size: 14px;
-    color: #cccccc;
-    margin: 0;
-    line-height: 1.5;
-  }
-  
-  .bridge-notice strong {
-    color: #f0f0f0;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .bridge-card {
-      width: 100%;
-      padding: 30px 20px;
-    }
-    
-    .info-item {
-      padding: 12px;
-    }
-    
-    .info-icon {
-      width: 36px;
-      height: 36px;
-    }
-    
-    .info-content h3 {
-      font-size: 16px;
-    }
-    
-    .info-content p {
-      font-size: 13px;
-    }
-    
-    .wormhole-container {
-      padding: 15px 10px;
-    }
-  }
+}
