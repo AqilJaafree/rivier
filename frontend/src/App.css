@@ -1,4 +1,4 @@
-/* App.css - Global App Styles */
+/* App.css - Global App Styles - Modern Minimalist */
 /* Import Google Fonts for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -8,12 +8,13 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #1c1c1c, #6a0dad);
-  color: #f0f0f0;
+  background: #f7f7f7;
+  color: #333;
   min-height: 100vh;
   line-height: 1.6;
 }
@@ -28,7 +29,7 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -36,19 +37,18 @@ html, body {
 
 /* Card styling for content sections */
 .card {
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 8px;
   padding: 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-  border: 2px solid;
-  border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 2rem;
 }
 
 .card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-title {
@@ -56,7 +56,7 @@ html, body {
   margin-bottom: 24px;
   font-size: 24px;
   font-weight: 600;
-  color: #ffffff;
+  color: #222;
 }
 
 /* Button styles */
@@ -66,31 +66,31 @@ html, body {
   justify-content: center;
   gap: 8px;
   padding: 10px 16px;
-  background: linear-gradient(135deg, #1e8ebe, #430394);
-  color: white;
+  background: #007bff;
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
   text-decoration: none;
 }
 
 .btn:hover {
+  background: #0069d9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30, 142, 190, 0.3);
 }
 
 .btn.secondary {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #555;
 }
 
 .btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: #f2f2f2;
+  border-color: #bbb;
 }
 
 /* Loading spinner */
@@ -98,15 +98,17 @@ html, body {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top-color: white;
+  border-top-color: #007bff;
   animation: spin 1s ease-in-out infinite;
   margin: 0 auto;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Footer */
@@ -115,8 +117,8 @@ html, body {
   padding: 20px;
   text-align: center;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #777;
+  border-top: 1px solid #e0e0e0;
 }
 
 /* Responsive adjustments */
@@ -124,7 +126,7 @@ html, body {
   .main-content {
     padding: 1rem;
   }
-  
+
   .card {
     padding: 24px;
   }
