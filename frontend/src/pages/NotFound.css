@@ -1,80 +1,82 @@
 /* pages/NotFound.css */
 .not-found-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 150px);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease-out forwards;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .not-found-content {
-    text-align: center;
-    max-width: 600px;
-    animation: fadeIn 0.5s ease-out forwards;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
+
+.not-found-code {
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #333;
+  /* A subtle, dark neutral tone */
+}
+
+.not-found-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+  /* A refined, rich dark for clear readability */
+}
+
+.not-found-message {
+  font-size: 18px;
+  color: #666;
+  /* Soft dark gray for comfortable reading */
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .not-found-code {
-    font-size: 150px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #1e8ebe, #430394);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 120px;
   }
-  
+
   .not-found-title {
-    font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #f0f0f0;
+    font-size: 32px;
   }
-  
+
   .not-found-message {
-    font-size: 18px;
-    color: #cccccc;
-    margin-bottom: 40px;
-    line-height: 1.6;
+    font-size: 16px;
   }
-  
+
   .not-found-actions {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .not-found-code {
-      font-size: 120px;
-    }
-    
-    .not-found-title {
-      font-size: 32px;
-    }
-    
-    .not-found-message {
-      font-size: 16px;
-    }
-    
-    .not-found-actions {
-      flex-direction: column;
-      gap: 15px;
-    }
-  }
+}

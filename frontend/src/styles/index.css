@@ -1,200 +1,17 @@
+/* Modern Minimalist Base Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 * {
     box-sizing: border-box;
-    line-height: normal;
-    font-family: inherit;
-    margin: unset;
 }
 
-.one_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(314deg, #1f2937cc, #374151, #1f2937cc);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 16px;
-        border: 1px solid transparent;
-    }
-}
-
-.column_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(343deg, #6366f1cc, #374151, #1f2937cc);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 16px;
-        border: 1px solid transparent;
-    }
-}
-
-.arrowleft_one_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, #3741517a, #3741517a);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 16px;
-        border: 0.75px solid transparent;
-    }
-}
-
-.badge_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, #37415128, #3741517a);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 12px;
-        border: 0.5px solid transparent;
-    }
-}
-
-.get_started_border {
-    backdrop-filter: blur(1px);
-
-    &::before {
-        content:
-            "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, #ff3bff, #ecbebe, #5c24ff, #d94fd5);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 34px;
-        border: 2px solid transparent;
-    }
-}
-
-.pleace_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, #ffffff77, #ffffff8b, #ffffff63);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 00) padding-box,
-            linear-gradient(#fff 00);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 10px;
-        border: 1px solid transparent;
-    }
-}
-
-.header_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(314deg, #1f2937, #374151, #1f2937);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 16px;
-        border: 1px solid transparent;
-    }
-}
-
-.schedule_demo_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, #1f2937, #4b5563, #1f2937);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 8px;
-        border: 1px solid transparent;
-    }
-}
-
-.logo_border {
-    backdrop-filter: blur (1px);
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, #1f2937, #4b5563, #1f2937);
-        background-clip: border-box;
-        mask:
-            linear-gradient(#fff 0 0) padding-box,
-            linear-gradient(#fff 0 0);
-        mask-composite: exclude !important;
-        z-index: -10;
-        border-radius: 16px;
-        border: 1px solid transparent;
-    }
-}
-
-.blue_gray_800_7a_blue_gray_800_7a_border {
-    border-image: linear-gradient(180deg, #3741517a, #3741517a) 1;
-}
-
-.white_A700_77_white_A700_63_border {
-    border-image: linear-gradient(180deg, #ffffff77, #ffffff8b, #ffffff63) 1;
-}
-
-.blue_gray_900_06_blue_gray_900_06_border {
-    border-image: linear-gradient(135deg, #1f2937, #4b5563, #1f2937) 1;
-}
-
+/* Basic element styling */
 a {
     text-decoration: none;
     display: block;
@@ -202,7 +19,6 @@ a {
 
 ul {
     margin: 0;
-    margin-inline: unset !important;
     padding: 0;
     list-style: none;
 }
@@ -210,100 +26,136 @@ ul {
 input {
     background-color: transparent;
     width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
 }
 
 input:focus {
     outline: none;
+    border-color: #007aff;
 }
 
+/* Minimalist Border Containers */
+.one_border,
+.column_border,
+.arrowleft_one_border,
+.header_border,
+.logo_border,
+.schedule_demo_border {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.one_border:hover,
+.column_border:hover,
+.arrowleft_one_border:hover,
+.header_border:hover,
+.logo_border:hover,
+.schedule_demo_border:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Badge Border Styling */
+.badge_border {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.badge_border:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Get Started Button Styling */
+.get_started_border {
+    position: relative;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 34px;
+    padding: 0.75em 1.5em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.get_started_border:hover {
+    background-color: #006ae6;
+}
+
+/* Plain Container (Pleace Border) Styling */
+.pleace_border {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.pleace_border:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Subtle Border Variations */
+.blue_gray_800_7a_blue_gray_800_7a_border {
+    border: 1px solid rgba(55, 65, 81, 0.48);
+}
+
+.white_A700_77_white_A700_63_border {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.blue_gray_900_06_blue_gray_900_06_border {
+    border: 1px solid rgba(31, 41, 59, 0.06);
+}
+
+/* Floating Label Styles */
 label [floating-label] {
     position: relative;
-
-    &>input[floating-input] {
-        transition: all;
-        transition-duration: 0.25s;
-        outline: none !important;
-        border: none !important;
-        background: transparent !important;
-        max-height: 1.25em;
-        line-height: 1em;
-
-        &:focus,
-        &:not(:placeholder-shown) {
-            outline: none !important;
-
-            &::placeholder {
-                color: transparent;
-            }
-
-            &~div[floating-text] {
-                opacity: unset;
-            }
-        }
-    }
-
-    &>div[floating-text] {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transform-origin: top left;
-        transition: all;
-        transition-duration: 0.25s;
-        opacity: 0;
-        line-height: 1em;
-        pointer-events: none;
-    }
 }
 
-label [floating-label="normal"] {
-    &>input[floating-input] {
-
-        &:focus,
-        &:not(:placeholder-shown) {
-            &~div[floating-text] {
-                top: 0em;
-                transform: translateY(-50%) scale(85%);
-                margin-right: -0.15em;
-                margin-left: -0.15em;
-                padding-right: 0.15em;
-                padding-left: 0.15em;
-                backdrop-filter: blur(3m);
-            }
-        }
-    }
+label [floating-label]>input[floating-input] {
+    transition: all 0.25s;
+    outline: none;
+    border: 1px solid #ddd;
+    background: transparent;
+    padding: 0.5em;
+    width: 100%;
+    border-radius: 4px;
 }
 
-label [floating-label="contained"] {
-    &>input[floating-input] {
-
-        &:focus,
-        &:not(:placeholder-shown) {
-            transform: translateY(0.5em);
-
-            &~div[floating-text] {
-                top: calc(50% - 1.25em);
-                transform: scale(85%);
-            }
-        }
-    }
+label [floating-label]>div[floating-text] {
+    position: absolute;
+    top: 50%;
+    left: 0.5em;
+    transform: translateY(-50%);
+    transition: all 0.25s;
+    opacity: 0;
+    pointer-events: none;
+    background: #f5f5f5;
+    padding: 0 0.25em;
+    color: #007aff;
 }
 
+label [floating-label="normal"]>input[floating-input]:focus~div[floating-text],
+label [floating-label="normal"]>input[floating-input]:not(:placeholder-shown)~div[floating-text] {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    opacity: 1;
+}
+
+/* Tab Panel Animation */
 .tab-panel--selected {
-    animation-name: tabPanel;
-    animation-duration: 300ms;
-    animation-timing-function: linear;
-}
-
-.tablecrypto {
-    th:first-child {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 0px;
-    }
-
-    th:last-child {
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 0px;
-    }
+    animation: tabPanel 300ms linear;
 }
 
 @keyframes tabPanel {
@@ -316,14 +168,30 @@ label [floating-label="contained"] {
     }
 }
 
+/* Table Styling */
 table {
+    width: 100%;
+    border-collapse: collapse;
     table-layout: fixed;
 }
 
+.tablecrypto th {
+    padding: 0.75em;
+    background-color: #fafafa;
+}
+
+.tablecrypto th:first-child {
+    border-top-left-radius: 4px;
+}
+
+.tablecrypto th:last-child {
+    border-top-right-radius: 4px;
+}
+
+/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-    background: transparent;
 }
 
 ::-webkit-scrollbar-track {
@@ -331,30 +199,31 @@ table {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #6b6b6b;
+    background: #ccc;
     border-radius: 10px;
 }
 
+/* Sidebar and Menu Styling */
 .ps-menu-icon {
-    width: unset !important;
-    min-width: unset !important;
-    justify-content: start !important;
+    width: auto !important;
+    min-width: auto !important;
+    justify-content: flex-start !important;
     margin: 0 !important;
 }
 
 .ps-menu-button,
 .ps-menu-icon {
-    height: unset !important;
+    height: auto !important;
 }
 
 .ps-menu-button:hover {
-    background-color: unset !important;
+    background-color: transparent !important;
 }
 
 .ps-sidebar-container,
 .ps-submenu-content {
     background-color: transparent !important;
-    overflow: unset;
+    overflow: visible;
 }
 
 .ps-collapsed.ps-menu-icon {
@@ -375,16 +244,14 @@ table {
 }
 
 .ps-sidebar-root {
-    min-width: unset !important;
+    min-width: auto !important;
 }
 
 .ps-collapsed,
 .ps-collapsed .ps-menu-root,
 .ps-collapsed .ps-menu-button {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    margin-left: unset !important;
-    margin-right: unset !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .ps-collapsed ul {
